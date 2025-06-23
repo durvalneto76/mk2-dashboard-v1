@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MK2 Dashboard - Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Acesso ao Dashboard</h2>
+    <div>
+      <label>Usuário:</label>
+      <input type="text" id="username" placeholder="Digite seu usuário">
+    </div>
+    <div>
+      <label>Senha:</label>
+      <input type="password" id="password" placeholder="Digite sua senha">
+    </div>
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // SENHA PADRÃO (VAMOS ALTERAR DEPOIS)
+      if (password !== "Mk2SenhaSegura@2025") {
+        alert("Senha incorreta! Use: Mk2SenhaSegura@2025");
+        return;
+      }
+      
+      if (username.toLowerCase() === "admin") {
+        localStorage.setItem('mk2_token', 'admin_token');
+        window.location.href = 'index.html';
+        return;
+      }
+      
+      const token = username.toLowerCase().replace(/\s+/g, '_') + '_token';
+      localStorage.setItem('mk2_token', token);
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
