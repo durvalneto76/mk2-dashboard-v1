@@ -1,5 +1,5 @@
 // COLE AQUI A URL DO APP SCRIPT QUE VOCÊ COPIOU!
-const API_URL = https://script.google.com/macros/s/AKfycbwcGNYbuWSMAkUSMcj1mvfrPgrQS4SyecjNDlvf7yrD_dISiRZrAPLhmdrkz03JyMmx2g/exec;
+const API_URL = "https://script.google.com/macros/s/AKfycbwcGNYbuWSMAkUSMcj1mvfrPgrQS4SyecjNDlvf7yrD_dISiRZrAPLhmdrkz03JyMmx2g/exec";
 
 // Elementos da página
 const contentDiv = document.getElementById('dashboard-content');
