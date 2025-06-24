@@ -20,25 +20,41 @@
 
   <script>
     function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      
-      // SENHA PADRÃO (VAMOS ALTERAR DEPOIS)
-      if (password !== "Mk2SenhaSegura@2025") {
-        alert("Senha incorreta! Use: Mk2SenhaSegura@2025");
-        return;
-      }
-      
-      if (username.toLowerCase() === "admin") {
-        localStorage.setItem('mk2_token', 'admin_token');
-        window.location.href = 'index.html';
-        return;
-      }
-      
-      const token = username.toLowerCase().replace(/\s+/g, '_') + '_token';
-      localStorage.setItem('mk2_token', token);
-      window.location.href = 'index.html';
-    }
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  
+  // SENHA PADRÃO (USE A MESMA DE SEMPRE)
+  if (password !== "Mk2SenhaSegura@2025") {
+    alert("Senha incorreta! Use: Mk2SenhaSegura@2025");
+    return;
+  }
+  
+  // ADMIN
+  if (username.toLowerCase() === "admin") {
+    localStorage.setItem('mk2_token', 'admin_token');
+    window.location.href = 'index.html';
+    return;
+  }
+  
+  // LISTA SIMPLIFICADA DE GERENTES
+  const userTokens = {
+    "caio": "caio_token",
+    "jacqueline": "jacqueline_token",
+    "raineken": "raineken_token",
+    "thais": "thais_token",
+    "karina": "karina_token",
+    "vicioli": "vicioli_token"
+  };
+  
+  const token = userTokens[username.toLowerCase()];
+  
+  if (token) {
+    localStorage.setItem('mk2_token', token);
+    window.location.href = 'index.html';
+  } else {
+    alert("Usuário não reconhecido! Use: admin, caio, jacqueline, etc.");
+  }
+}
   </script>
 </body>
 </html>
