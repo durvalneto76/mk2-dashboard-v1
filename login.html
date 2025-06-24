@@ -24,7 +24,7 @@
   const password = document.getElementById('password').value;
   
   // Primeiro, tente autenticar via API
-  fetch('https://script.google.com/macros/s/SUA_URL_API/exec?action=validateLogin&username=' + 
+  fetch('https://script.google.com/macros/s/AKfycbwcGNYbuWSMAkUSMcj1mvfrPgrQS4SyecjNDlvf7yrD_dISiRZrAPLhmdrkz03JyMmx2g/exec?action=validateLogin&username=' + 
         encodeURIComponent(username) + '&password=' + encodeURIComponent(password))
     .then(response => response.json())
     .then(data => {
